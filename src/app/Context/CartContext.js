@@ -14,7 +14,7 @@ export const AppProvider = ({ children }) => {
       updatedCartItems[existingItemIndex].quantity += product.quantity;
       setCartItems(updatedCartItems);
     } else {
-      setCartItems(prevItems => [...prevItems, product]);
+      setCartItems(prevItems => [...prevItems, product]) ;
     }
   };
 

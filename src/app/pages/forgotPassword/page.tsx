@@ -9,7 +9,7 @@ const forgotPassword = () => {
     const [password, setPassword] = useState("");
 
     const handleuser = async () => {
-        const response = await axios.put(`http://195.35.7.158:5006/auth/ForgotPassword`, { email, password });
+        const response = await axios.put(`http://localhost:5005/auth/ForgotPassword`, { email, password });
         window.location.href = '/';
     }
 
@@ -17,7 +17,7 @@ const forgotPassword = () => {
         <div className='flex flex-col h-screen w-full justify-center items-center '>
             <div className=' bg-blue-200 p-6 space-y-4'>
                 <div className='my-2 text-center font-semibold text-xl'>Reset Password</div>
-                <div>Emaill</div>
+                <div>Email</div>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}  name="email" />
                 <div>Last Password</div>
                 <input type="password" name="password" />

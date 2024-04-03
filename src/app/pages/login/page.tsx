@@ -10,7 +10,7 @@ const login = () => {
   const [password, setPassword] = useState("");
 
   const handleuser = async () => {
-    const response = await axios.post(`http://195.35.7.158:5006/auth/LogIn`, { email, password });
+    const response = await axios.post(`http://localhost:5005/auth/LogIn`, { email, password });
     Cookies.set('islogin', 'true')
       Cookies.set('email', email, { expires: 1, path: '/' });
     window.location.href = '/';

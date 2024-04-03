@@ -9,7 +9,7 @@ const fetchData = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:5005/product/AllProducts');
+                const response = await axios.get('http://195.35.7.158:5006/product/AllProducts');
                 setData(response.data.allProducts);
             } catch (error) {
                 console.error('Error fetching data:', error);

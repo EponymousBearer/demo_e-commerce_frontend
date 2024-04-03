@@ -9,7 +9,7 @@ const forgotPassword = () => {
     const [password, setPassword] = useState("");
 
     const handleuser = async () => {
-        const response = await axios.put(`http://localhost:5005/auth/ForgotPassword`, { email, password });
+        const response = await axios.put(`http://195.35.7.158:5006/auth/ForgotPassword`, { email, password });
         window.location.href = '/';
     }
 

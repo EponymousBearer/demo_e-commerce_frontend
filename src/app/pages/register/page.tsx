@@ -13,7 +13,7 @@ const Register = () => {
   const router = useRouter()
   const handleuser = async () => {
     try {
-      const response = await axios.post(`http://195.35.7.158:5006/auth/Register`, { email, password, firstname, lastname });
+      const response = await axios.post(`http://localhost:3000/auth/Register`, { email, password, firstname, lastname });
       Cookies.set('islogin', 'true')
       // window.location.href = '/';
 

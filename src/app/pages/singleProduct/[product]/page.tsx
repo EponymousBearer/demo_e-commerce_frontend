@@ -24,7 +24,7 @@ export default function SingleProduct({ params }: { params: any }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://195.35.7.158:5006/product/SingleProduct/${productId}`);
+        const response = await axios.get(`http://localhost:3000/product/SingleProduct/${productId}`);
         setData(response.data.singleProducts);
       } catch (error) {
         console.error('Error fetching data:', error);

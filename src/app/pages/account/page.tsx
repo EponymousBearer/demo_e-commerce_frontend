@@ -25,7 +25,7 @@ const Account = () => {
   const fetchData = async () => {
     try {
       console.log(userEmail)
-      const response = await axios.get(`http://195.35.7.158:5006/auth/MyAccount/${userEmail}`)
+      const response = await axios.get(`http://localhost:3000/auth/MyAccount/${userEmail}`)
       console.log(response.data.user)
       setData(response.data.user);
     } catch (error) {

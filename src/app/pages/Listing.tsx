@@ -32,7 +32,7 @@ export default function home({ data }:{data:any}) {
 
 export async function getServerSideProps() {
   try {
-    const response = await axios.get('http://195.35.7.158:5006/product/AllProducts');
+    const response = await axios.get('http://localhost:3000/product/AllProducts');
     const data = response.data.allProducts;
     return {
       props: { data },

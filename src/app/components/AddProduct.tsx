@@ -25,7 +25,7 @@ const AddProductForm = () => {
     setSuccessMessage(null);
 
     try {
-      const response = await axios.post('http://195.35.7.158:5006/product/AddProduct', formData);
+      const response = await axios.post('http://localhost:3000/product/AddProduct', formData);
 
       if (response.status === 201) {
         setSuccessMessage(response.data.message);

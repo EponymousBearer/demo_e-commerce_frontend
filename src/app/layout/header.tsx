@@ -4,11 +4,13 @@ import Link from 'next/link'
 import { AppContext } from '../Context/CartContext';
 import Cookies from 'js-cookie';
 import { ShoppingCart } from 'lucide-react';
+import { useRouter } from 'next/navigation'
 
 const Header = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const { cart, setCart } = useContext(AppContext);
-
+  const router = useRouter()
+  
   useEffect(() => {
     setIsUserLoggedIn(Cookies.get('islogin') === 'true');
   }, []);
@@ -18,7 +20,8 @@ const Header = () => {
     Cookies.remove('islogin');
     setIsUserLoggedIn(false);
     Cookies.remove('email');
-    window.location.href = '/';
+    // window.location.href = '/';
+    router.push('/', { scroll: false })
   };
   return (
     <div className="flex items-center py-8 lg:py-8 px-10">

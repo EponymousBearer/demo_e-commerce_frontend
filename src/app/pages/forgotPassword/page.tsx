@@ -2,15 +2,18 @@
 "use client"
 import axios from 'axios';
 import Link from 'next/link'
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
 const forgotPassword = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const router = useRouter()
     const handleuser = async () => {
         const response = await axios.put(`http://195.35.7.158:5006/auth/ForgotPassword`, { email, password });
-        window.location.href = '/';
+        // window.location.href = '/';
+    router.push('/', { scroll: false })
+        
     }
 
     return (

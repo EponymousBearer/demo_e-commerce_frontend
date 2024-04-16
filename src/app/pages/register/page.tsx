@@ -3,18 +3,21 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
+import { useRouter } from 'next/navigation';
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
-
+  const router = useRouter()
   const handleuser = async () => {
     try {
       const response = await axios.post(`http://195.35.7.158:5006/auth/Register`, { email, password, firstname, lastname });
       Cookies.set('islogin', 'true')
-      window.location.href = '/';
+      // window.location.href = '/';
+
+      router.push('/', { scroll: false })
     } catch (error: any) {
       if (error.response) {
         console.error('Registration failed:', error.response.data);

@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./layout/header";
 import { AppProvider } from './Context/CartContext'
+import { getServerSession } from "next-auth";
+import SessionProvider from '@/utils/SessionProvider';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,20 +13,23 @@ export const metadata: Metadata = {
   description: "Created by Adnan",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession();
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AppProvider>
-          <div>
-            <Header />
-            {children}
-          </div>
-        </AppProvider>
+        <SessionProvider session={session}>
+          <AppProvider>
+            <div>
+              <Header />
+              {children}
+            </div>
+          </AppProvider>
+        </SessionProvider>
       </body>
     </html>
   );

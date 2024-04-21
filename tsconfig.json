@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/api/auth/[...nextauth]/route.ts", "src/app/api/register/route.ts", "src/app/api/userExists/route.js", "src/app/Providers.js", "src/app/register/page.jsx", "src/app/dashboard/page.jsx", "src/components/LoginForm.jsx", "src/components/RegisterForm.jsx", "src/components/UserProfile.jsx", "src/lib/mongodb.js", "src/lib/models/User.js", "middleware.js"],
   "exclude": ["node_modules"]
 }

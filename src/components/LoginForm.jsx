@@ -1,8 +1,6 @@
 "use client"
-import axios from 'axios';
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react';
 
@@ -23,7 +21,7 @@ export default function LoginForm() {
                 setError("Invalid Credentials")
                 return;
             }
-            router.replace('dashboard')
+            router.replace('/dashboard')
         } catch (error) {
             console.log(error)
         }
@@ -32,7 +30,7 @@ export default function LoginForm() {
     return (
         <div className='flex flex-col h-screen w-full justify-center items-center '>
             <div className=' bg-blue-200 p-6 space-y-4'>
-                <div className='my-2 text-center font-semibold text-xl'>Login</div>
+                <div className='my-2 text-center font-semibold text-xl'>Login JSX</div>
                 <form onSubmit={handleuser}>
                     <div>Email</div>
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="email" />

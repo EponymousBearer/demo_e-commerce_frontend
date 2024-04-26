@@ -19,7 +19,6 @@ export default async function Home() {
     <section>
       <AllProducts />
       <AddProduct />
-      {/* <Register/> */}
     </section>
   );
 }

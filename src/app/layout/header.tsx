@@ -3,13 +3,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { AppContext } from '../Context/CartContext';
 import { ShoppingCart } from 'lucide-react';
-import { useRouter } from 'next/navigation'
 import { signOut, useSession } from 'next-auth/react';
 
 const Header = () => {
   const { data: session }: any = useSession();
   const { cart, setCart } = useContext(AppContext);
-  const router = useRouter()
 
   return (
     <div className="flex items-center py-8 lg:py-8 px-10">
@@ -31,7 +29,7 @@ const Header = () => {
             >Log Out
             </button>
             </li>
-            <Link href="/account"><li>Account</li></Link>
+            <Link href="/dashboard"><li>Dashboard</li></Link>
           </>
         )}
         <Link href="/cart">

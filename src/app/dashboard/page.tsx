@@ -7,9 +7,11 @@ const Dashboard = async () => {
   if (!session) {
     redirect("/");
   }
+  
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      Dashboard
+      <h1>Welcome, {session?.user?.name}</h1>
+      <p>Email: {session?.user?.email}</p>
     </div>
   );
 };

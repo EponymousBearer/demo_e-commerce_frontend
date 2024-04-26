@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 const Login = () => {
   const router = useRouter();
   const [error, setError] = useState("");
-  // const session = useSession();
   const { data: session, status: sessionStatus } = useSession();
 
   useEffect(() => {
@@ -96,6 +95,13 @@ const Login = () => {
           >
             Register Here
           </Link>
+          <div>
+            <p className="py-2 hover:underline">
+              <Link href='/forget-password' >
+                Forget Password?
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     )

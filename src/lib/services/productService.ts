@@ -29,6 +29,7 @@ const getAllProducts = cache(async () => {
   return product;
 });
 
+
 // const PAGE_SIZE = 3
 // const getByQuery = cache(
 //   async ({

@@ -20,9 +20,7 @@ export default async function AllProducts() {
 
 export async function getServerSideProps() {
   try {
-    //   const response = await axios.get('http://localhost:3000/product/AllProducts');
     const products = await productService.getAllProducts()
-    //   const data = response.data.allProducts;
     return {
       props: { products },
     };

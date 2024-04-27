@@ -7,7 +7,6 @@ import connect from "@/utils/db";
 import { Account, User as AuthUser } from "next-auth";
 
 export const authOptions: NextAuthOptions = {
-  // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
       id: "credentials",
@@ -67,6 +66,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
-
-// export const handler = NextAuth(authOptions);
-// export { handler as GET, handler as POST };

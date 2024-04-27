@@ -1,6 +1,17 @@
 {
-  "/product/[slug]/page": "app/product/[slug]/page.js",
+  "/_not-found": "app/_not-found.js",
+  "/cart/page": "app/cart/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/forget-password/page": "app/forget-password/page.js",
+  "/login/page": "app/login/page.js",
+  "/product/[slug]/page": "app/product/[slug]/page.js",
+  "/register/page": "app/register/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/addProduct/route": "app/api/addProduct/route.js",
+  "/api/forget-password/route": "app/api/forget-password/route.js",
+  "/api/interact/route": "app/api/interact/route.js",
+  "/api/products/seed/route": "app/api/products/seed/route.js",
+  "/api/register/route": "app/api/register/route.js",
   "/page": "app/page.js"
 }

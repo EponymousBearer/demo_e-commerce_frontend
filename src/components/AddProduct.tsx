@@ -39,47 +39,51 @@ const AddProductForm = () => {
     session ? (
       <div className="max-w-md mx-auto mt-8 p-6 bg-gray-100 rounded-lg shadow-md">
         <h2 className="text-2xl mb-4">Add Product</h2>
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)} className="gap-y-6 flex flex-col">
           <div>
-            <label htmlFor="title">Title:</label>
+            <label htmlFor="title">Title</label>
             <input
               type="text"
               id="title"
               name="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              className="flex w-full"
             />
           </div>
           <div>
-            <label htmlFor="description">Description:</label>
+            <label htmlFor="description">Description</label>
             <textarea
               id="description"
               name="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              className="flex w-full"
             />
           </div>
           <div>
-            <label htmlFor="price">Price:</label>
+            <label htmlFor="price">Price: </label>
             <input
               type="text"
               id="price"
               name="price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
+              className="flex w-full"
             />
           </div>
           <div>
-            <label htmlFor="image">Image URL:</label>
+            <label htmlFor="image">Image URL</label>
             <input
               type="text"
               id="image"
               name="image"
               value={image}
               onChange={(e) => setImage(e.target.value)}
+              className="flex w-full"
             />
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit" className="border-black border max-w-24 mx-auto w-full">Submit</button>
         </form>
         {error && <p style={{ color: 'red' }} className="mt-4">{error}</p>}
         {successMessage && <p style={{ color: 'green' }} className="mt-4">{successMessage}</p>}

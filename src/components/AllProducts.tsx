@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import productService from "../lib/services/productService";
-import { ProductItem } from "./products/ProductItem";
+import { ProductItem } from "./ProductItem";
 
 export default async function AllProducts() {
   const products = await productService.getAllProducts()

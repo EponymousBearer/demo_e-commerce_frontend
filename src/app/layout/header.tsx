@@ -12,7 +12,6 @@ const Header = () => {
   return (
     <div className="flex items-center py-8 lg:py-8 px-10">
       <ul className="hidden lg:flex items-center justify-end gap-x-8 flex-auto">
-
         <Link href="/"><li>Home</li></Link>
         {!session ? (
           <>
@@ -21,7 +20,7 @@ const Header = () => {
           </>
         ) : (
           <>
-            {session.user?.email}
+            <Link href="/dashboard"><li>Dashboard</li></Link>
             <li><button onClick={() => {
               signOut();
             }}
@@ -29,7 +28,6 @@ const Header = () => {
             >Log Out
             </button>
             </li>
-            <Link href="/dashboard"><li>Dashboard</li></Link>
           </>
         )}
         <Link href="/cart">

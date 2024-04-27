@@ -22,8 +22,8 @@ export default function Register() {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        const firstName = e.target[0].value;
-        const lastName = e.target[1].value;
+        const firstname = e.target[0].value;
+        const lastname = e.target[1].value;
         const email = e.target[2].value;
         const password = e.target[3].value;
 
@@ -36,7 +36,7 @@ export default function Register() {
             setError("Password is invalid");
             return;
         }
-
+        
         try {
             const res = await fetch("/api/register", {
                 method: "POST",
@@ -44,8 +44,8 @@ export default function Register() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    firstName,
-                    lastName,
+                    firstname,
+                    lastname,
                     email,
                     password,
                 }),
